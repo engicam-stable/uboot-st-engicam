@@ -222,9 +222,8 @@ static int stmfx_pinctrl_conf_set(struct udevice *dev, unsigned int pin,
 {
 	int ret, dir;
 	struct stmfx_pinctrl *plat = dev_get_platdata(dev);
-
+while(1);
 	dir = stmfx_gpio_get_function(plat->gpio, pin);
-
 	if (dir < 0)
 		return dir;
 
