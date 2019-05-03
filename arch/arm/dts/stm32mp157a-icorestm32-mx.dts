@@ -91,7 +91,8 @@
 					drive-push-pull;
 					slew-rate = <3>;
 				};
-				pins-2 {
+		
+	pins-2 {
                     pinmux = <STM32_PINMUX('D', 10, GPIO)>;
                     bias-pull-up;
                     drive-push-pull;
@@ -602,19 +603,17 @@
 	};
 };
 
-
-&ethernet0{
-    u-boot,dm-pre-reloc;
+&ethernet0 {
     pinctrl-names = "default";
     pinctrl-0 = <&eth1_pins_mx>;
-    status = "okay";
- 	phy-mode = "rmii";
+	phy-mode = "rmii";
 	max-speed = <100>;
 	phy-handle = <&phy0>;
 	snps,ps-speed = <100>;
     st,eth_ref_clk_sel;
+	status = "disabled";
 
-   clock-names = "stmmaceth",
+    clock-names = "stmmaceth",
                 "mac-clk-tx",
                 "mac-clk-rx",
                 "ethstp",
@@ -627,20 +626,19 @@
             <&rcc ETHSTP>,
             <&rcc SYSCFG>,
             <&rcc ETHCK>;
-
+	
     mdio0 {
 		#address-cells = <1>;
 		#size-cells = <0>;
-
 		compatible = "snps,dwmac-mdio";
-		snps,reset-gpio = <&gpiod 10 GPIO_ACTIVE_LOW>;
+		snps,reset-gpio = <&gpioa 13 0>;
 		snps,reset-delays-us = <25>;
 		snps,reset-active-low;
+
 		phy0: ethernet-phy-0 {
 			reg = <0>;
 		};
 	};
-
 };
 
 
