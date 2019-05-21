@@ -261,7 +261,7 @@ a) prepare GPT on eMMC,
 b) copy SPL on eMMC on firts boot partition
 	(SPL max size is 256kB, with LBA 512, 0x200)
 
-	# ext4load mmc 0:4 0xC0000000 u-boot-spl.stm32
+	# ext4load mmc 0:6 0xC0000000 tf-a-stm32mp157a-icorestm32-mx.stm32
 	# mmc dev 1
 	# mmc partconf 1 1 1 1
 	# mmc write ${fileaddr} 0 200
@@ -269,7 +269,7 @@ b) copy SPL on eMMC on firts boot partition
 
 b) copy U-Boot in first GPT partition of eMMC
 
-	# ext4load mmc 0:4 0xC0000000 u-boot.img
+	# ext4load mmc 0:6 0xC0000000 u-boot.stm32
 	# mmc dev 1
 	# part start mmc 1 1 partstart
 	# part size mmc 1 1 partsize

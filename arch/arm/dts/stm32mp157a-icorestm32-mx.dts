@@ -85,7 +85,7 @@
 						 <STM32_PINMUX('C', 4, AF11)>, /* ETH_RX_D0 */
 						 <STM32_PINMUX('C', 5, AF11)>, /* ETH_RX_D1 */
 						 <STM32_PINMUX('G', 13, AF11)>, /* ETH_TX_D0 */
-						 <STM32_PINMUX('G', 14, AF11)>, /* ETH_TX_D1 */						 
+						 <STM32_PINMUX('G', 14, AF11)>, /* ETH_TX_D1 */
 						 <STM32_PINMUX('D', 10, GPIO)>;
 					bias-disable;
 					drive-push-pull;
@@ -97,7 +97,7 @@
                     bias-pull-up;
                     drive-push-pull;
                     output-low;
-                    slew-rate = <0>;				
+                    slew-rate = <0>;
 				};
     };
 
@@ -205,18 +205,18 @@
         u-boot,dm-pre-reloc;
         pins1 {
             u-boot,dm-pre-reloc;
-            pinmux = <STM32_PINMUX('A', 8, AF9)>, /* SDMMC2_D4 */
-                     <STM32_PINMUX('A', 9, AF10)>, /* SDMMC2_D5 */
-                     <STM32_PINMUX('B', 3, AF9)>, /* SDMMC2_D2 */
-                     <STM32_PINMUX('B', 4, AF9)>, /* SDMMC2_D3 */
-                     <STM32_PINMUX('B', 14, AF9)>, /* SDMMC2_D0 */
-                     <STM32_PINMUX('B', 15, AF9)>, /* SDMMC2_D1 */
-                     <STM32_PINMUX('D', 3, AF9)>, /* SDMMC2_D7 */
-                     <STM32_PINMUX('E', 5, AF9)>, /* SDMMC2_D6 */
-                     <STM32_PINMUX('G', 6, AF10)>; /* SDMMC2_CMD */
-            bias-disable;
+            pinmux = <STM32_PINMUX('B', 14, AF9)>, /* SDMMC2_D0 */
+                    <STM32_PINMUX('B', 15, AF9)>, /* SDMMC2_D1 */
+                    <STM32_PINMUX('B', 3, AF9)>, /* SDMMC2_D2 */
+                    <STM32_PINMUX('B', 4, AF9)>, /* SDMMC2_D3 */
+                    <STM32_PINMUX('G', 6, AF10)>, /* SDMMC2_CMD */
+                    <STM32_PINMUX('A', 8, AF9)>, /* SDMMC2_D4 */
+                    <STM32_PINMUX('A', 9, AF10)>, /* SDMMC2_D5 */
+                    <STM32_PINMUX('E', 5, AF9)>, /* SDMMC2_D6 */
+                    <STM32_PINMUX('D', 3, AF9)>; /* SDMMC2_D7 */
+            slew-rate = <3>;
             drive-push-pull;
-            slew-rate = <1>;
+            bias-pull-up;
         };
         pins2 {
             u-boot,dm-pre-reloc;
@@ -226,6 +226,7 @@
             slew-rate = <3>;
         };
     };
+
     uart4_pins_mx: uart4_mx-0 {
         u-boot,dm-pre-reloc;
         pins1 {
