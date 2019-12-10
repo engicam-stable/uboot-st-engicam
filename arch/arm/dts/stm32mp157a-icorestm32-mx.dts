@@ -189,9 +189,9 @@
                      <STM32_PINMUX('C', 10, AF12)>, /* SDMMC1_D2 */
                      <STM32_PINMUX('C', 11, AF12)>, /* SDMMC1_D3 */
                      <STM32_PINMUX('D', 2, AF12)>; /* SDMMC1_CMD */
-            bias-disable;
+            bias-pull-up;
             drive-push-pull;
-            slew-rate = <3>;
+            slew-rate = <1>;
         };
         pins2 {
             u-boot,dm-pre-reloc;
@@ -499,8 +499,7 @@
     status = "okay";
 
     /* USER CODE BEGIN sdmmc1 */
-    no-removable;
-    st,dirpol;
+	broken-cd;
     st,negedge;
     bus-width=<4>;
     /* USER CODE END sdmmc1 */
